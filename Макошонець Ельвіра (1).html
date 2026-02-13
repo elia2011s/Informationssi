@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Книжковий Рай</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #5a3e85;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #3e2b63;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #5a3e85;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .book {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .book h3 {
+            margin-top: 0;
+        }
+
+        .subscribe {
+            background-color: #e6ddf5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #5a3e85;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #3e2b63;
+        }
+
+        footer {
+            background-color: #3e2b63;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📚 Книжковий Рай</h1>
+    <p>Місце, де книги оживають</p>
+</header>
+
+<nav>
+    <a href="#about">Про бібліотеку</a>
+    <a href="#books">Колекція</a>
+    <a href="#subscribe">Розсилка</a>
+</nav>
+
+<section id="about">
+    <h2>Про нас</h2>
+    <p>
+        «Книжковий Рай» — це сучасна онлайн-бібліотека для всіх,
+        хто любить читати. Тут ви знайдете художню літературу,
+        навчальні книги та світові бестселери.
+    </p>
+</section>
+
+<section id="books">
+    <h2>Наша колекція</h2>
+    <div class="books">
+        <div class="book">
+            <h3>📖 Тарас Бульба</h3>
+            <p>Микола Гоголь</p>
+            <p>Історична повість про козаків та честь.</p>
+        </div>
+
+        <div class="book">
+            <h3>📘 Кобзар</h3>
+            <p>Тарас Шевченко</p>
+            <p>Збірка віршів, що стала символом України.</p>
+        </div>
+
+        <div class="book">
+            <h3>📕 Гаррі Поттер</h3>
+            <p>Дж. К. Роулінг</p>
+            <p>Фантастична історія про магію та дружбу.</p>
+        </div>
+
+        <div class="book">
+            <h3>📗 Місто</h3>
+            <p>Валер’ян Підмогильний</p>
+            <p>Роман про життя та вибір людини.</p>
+        </div>
+    </div>
+</section>
+
+<section id="subscribe">
+    <h2>Підписка на новини</h2>
+    <div class="subscribe">
+        <p>Отримуйте новини та рекомендації книг на пошту 📩</p>
+        <input type="email" id="email" placeholder="Введіть email">
+        <button onclick="subscribe()">Підписатися</button>
+        <p id="message"></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Книжковий Рай | Усі права захищені</p>
+</footer>
+
+<script>
+    function subscribe() {
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message");
+
+        if (email === "") {
+            message.style.color = "red";
+            message.textContent = "Будь ласка, введіть email 🙂";
+        } else {
+            message.style.color = "green";
+            message.textContent = "Дякуємо за підписку! 💜";
+            document.getElementById("email").value = "";
+        }
+    }
+</script>
+
+</body>
+</html>
